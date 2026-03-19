@@ -15,24 +15,24 @@ export default function Admin() {
   }, []);
 
   const fetchGroups = async () => {
-    const res = await axios.get("http://localhost:5000/groups");
+    const res = await axios.get("https://chat-application-ga08.onrender.com/groups");
     setGroups(res.data);
   };
 
   const fetchChats = async () => {
-    const res = await axios.get("http://localhost:5000/all-chats");
+    const res = await axios.get("https://chat-application-ga08.onrender.com/all-chats");
     setChats(res.data);
   };
 
   const fetchUsers = async () => {
-    const res = await axios.get("http://localhost:5000/group-users");
+    const res = await axios.get("https://chat-application-ga08.onrender.com/group-users");
     setGroupUsers(res.data);
   };
 
   const createGroup = async () => {
     if (!newGroup.trim()) return;
 
-    await axios.post("http://localhost:5000/groups", {
+    await axios.post("https://chat-application-ga08.onrender.com/groups", {
       name: newGroup,
     });
 
@@ -41,7 +41,7 @@ export default function Admin() {
   };
 
   const deleteGroup = async (name) => {
-    await axios.delete(`http://localhost:5000/groups/${name}`);
+    await axios.delete(`https://chat-application-ga08.onrender.com/groups/${name}`);
     fetchGroups();
   };
 
