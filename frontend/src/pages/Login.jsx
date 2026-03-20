@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -6,20 +6,34 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [group, setGroup] = useState("");
 
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      navigate("/chat", { replace: true });
+    }
+  }, []);
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
+  const validGroups = ["Tech","genearl"]; 
+
+  if (!validGroups.includes(group)) {
+    alert("❌ Cannot find any group with this ID");
+    return;
+  }
     const userData = { name, password, group };
 
     localStorage.setItem("user", JSON.stringify(userData));
 
     // ✅ Admin Check
-    const admName = 'admin';
-    const admPass = 'admin#2005'
+    const admName = 'saqib';
+    const admPass = 'saqib123'
     if (name === admName && password === admPass && group === "admin") {
-      navigate("/admin");
+      navigate("/admin", { replace: true });  // ✅ FIX
     } else {
-      navigate("/chat");
+      navigate("/chat", { replace: true });
     }
   };
 

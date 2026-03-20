@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import { Mail, Instagram, MessageCircle } from "lucide-react";
+import { Mail, Instagram, MessageCircle, Github } from "lucide-react";
 
 export default function About() {
   return (
@@ -82,6 +82,15 @@ export default function About() {
                 className="bg-indigo-500 text-white p-3 rounded-full shadow hover:scale-110 transition"
               >
                 <Mail size={18} />
+              </a>
+
+              <a
+                href="https://github.com/Saqib-Bahadur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 text-white p-3 rounded-full shadow hover:bg-black hover:scale-110 transition"
+              >
+                <Github size={18} />
               </a>
 
             </div>
