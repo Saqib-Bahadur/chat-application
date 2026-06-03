@@ -90,21 +90,6 @@ npm run dev
 
 ---
 
-## Deployment
-
-You can deploy this project using:
-
-* Frontend → Vercel / Netlify
-* Backend → Render / Railway
-
----
-
-##  Screenshots
-
-(screenshots )
-
----
-
 ## Future Improvements
 
 * File sharing (images, docs)
